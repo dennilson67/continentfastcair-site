@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #08090B;
+    --bg-card: #0D0F12;
+    --bg-card-hover: #121417;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-highlight: rgba(255, 255, 255, 0.16);
+    --red-primary: #E10600;
+    --red-glow: rgba(225, 6, 0, 0.35);
+    --text-primary: #F4F5F6;
+    --text-secondary: #D9DDE2;
+    --text-muted: #9CA3AA;
+    --metal-light: #D7DADF;
+    --metal-dark: #BFC4CA;
+  }
+
+  body {
+    background-color: #050505;
+    color: #F4F5F6;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+/* Luxury Automotive Light Streaks & Glow */
+.red-reflection-beam {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(225, 6, 0, 0.22), transparent 70%);
+}
+
+.red-ambient-glow {
+  box-shadow: 0 0 50px -10px rgba(225, 6, 0, 0.3);
+}
+
+.metal-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.metal-border-hover:hover {
+  border-color: rgba(225, 6, 0, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(225, 6, 0, 0.15);
+}
+
+/* Chrome Text Gradient */
+.text-chrome {
+  background: linear-gradient(180deg, #FFFFFF 0%, #D7DADF 45%, #9CA3AA 80%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-red-glow {
+  text-shadow: 0 0 20px rgba(225, 6, 0, 0.6);
+}
+
+/* Subtle Technical Grid Lines */
+.bg-grid-tech {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Animated Living Dark Red Gradient for Mobile Menu */
+@keyframes livingRedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.living-red-gradient {
+  background: linear-gradient(135deg, #050505 0%, #170505 25%, #08090B 50%, #220606 75%, #050505 100%);
+  background-size: 250% 250%;
+  animation: livingRedGradient 10s ease infinite;
+}
+
+@keyframes pulseGlowRed {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+.glow-red-pulse {
+  animation: pulseGlowRed 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #181B20;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E10600;
+}
