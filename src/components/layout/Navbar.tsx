@@ -134,10 +134,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimate }) => {
           <div className="absolute inset-0 bg-grid-tech opacity-20 pointer-events-none" />
 
           {/* Foreground Menu Container */}
-          <div className="relative z-10 flex flex-col h-full overflow-y-auto px-6 py-5">
+          <div className="relative z-10 flex flex-col h-full w-full max-w-full min-w-0 overflow-x-hidden overflow-y-auto px-4 sm:px-6 py-5 box-border">
             {/* Header: Brand & Close */}
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
-              <Logo variant="navbar" />
+            <div className="flex items-center justify-between gap-4 min-w-0 pb-4 border-b border-white/10">
+              <div className="min-w-0 max-w-[75%] overflow-hidden">
+  <Logo variant="navbar" />
+</div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all duration-200 active:scale-95"
@@ -148,9 +150,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimate }) => {
             </div>
 
             {/* Micro Navigation Header */}
-            <div className="flex items-center justify-between pt-6 pb-2 text-[10px] font-mono-tech uppercase tracking-[0.25em] text-[#9CA3AA]">
+            <div className="flex items-center justify-between gap-3 min-w-0 pt-6 pb-2 text-[10px] font-mono-tech uppercase tracking-[0.2em] text-[#9CA3AA]">
               <span>Menu de Navegação</span>
-              <span className="text-[#E10600] flex items-center gap-1">
+              <span className="shrink-0 text-[#E10600] flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E10600] animate-pulse"></span>
                 Palhoça / SC
               </span>
@@ -163,13 +165,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimate }) => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="group flex items-center justify-between py-3 px-3 rounded-lg text-lg font-display uppercase font-bold text-white hover:text-white hover:bg-white/[0.06] border-b border-white/[0.04] transition-all duration-200"
+                  classNamclassName="group flex w-full min-w-0 items-center justify-between gap-3 py-3 px-3 rounded-lg text-lg font-display uppercase font-bold text-white hover:text-white hover:bg-white/[0.06] border-b border-white/[0.04] transition-all duration-200 box-border"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex min-w-0 items-center gap-3">
                     <span className="text-xs font-mono-tech text-[#E10600] opacity-80 group-hover:opacity-100">
                       {link.num}
                     </span>
-                    <span className="tracking-wide group-hover:translate-x-1 transition-transform">
+                    <span className="min-w-0 truncate tracking-wide group-hover:translate-x-1 transition-transform">
                       {link.label}
                     </span>
                   </div>
@@ -187,7 +189,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimate }) => {
                   setMobileMenuOpen(false);
                   onOpenEstimate();
                 }}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E10600] via-[#FF2018] to-[#E10600] text-white text-xs font-extrabold uppercase tracking-widest shadow-[0_0_30px_rgba(225,6,0,0.6)] active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer border border-white/20"
+                className="w-full min-w-0 max-w-full box-border py-4 rounded-xl bg-gradient-to-r from-[#E10600] via-[#FF2018] to-[#E10600] text-white text-xs font-extrabold uppercase tracking-widest shadow-[0_0_30px_rgba(225,6,0,0.6)] active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer border border-white/20"
               >
                 <span>Solicitar Orçamento</span>
                 <ArrowRight className="w-4 h-4" />
